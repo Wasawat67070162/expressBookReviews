@@ -19,7 +19,6 @@ public_users.post("/register", (req, res) => {
   return res.status(404).json({ message: "Unable to register user." });
 });
 
-// Task 10: Get the book list using Async/Await with Promise
 public_users.get('/', async function (req, res) {
   try {
     const getBooks = () => new Promise((resolve) => resolve(books));
@@ -30,7 +29,6 @@ public_users.get('/', async function (req, res) {
   }
 });
 
-// Task 11: Get book details based on ISBN using Promise
 public_users.get('/isbn/:isbn', function (req, res) {
   const isbn = req.params.isbn;
   new Promise((resolve, reject) => {
@@ -44,7 +42,6 @@ public_users.get('/isbn/:isbn', function (req, res) {
     .catch((err) => res.status(err.status).json({ message: err.message }));
 });
   
-// Task 12: Get book details based on author using Promise
 public_users.get('/author/:author', function (req, res) {
   const author = req.params.author;
   new Promise((resolve, reject) => {
@@ -67,7 +64,6 @@ public_users.get('/author/:author', function (req, res) {
     .catch((err) => res.status(err.status).json({ message: err.message }));
 });
 
-// Task 13: Get all books based on title using Promise
 public_users.get('/title/:title', function (req, res) {
   const title = req.params.title;
   new Promise((resolve, reject) => {
